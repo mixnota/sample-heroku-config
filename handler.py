@@ -13,7 +13,9 @@ def handle_message(message, nickname="user"):
 
     answer = "no command found"
     if message == "\show":
-        answer = all_messages
+        answer = ""
+        for message in all_messages:
+            answer += message + '\n'
     elif message_split[0] == "\write":
         answer = ' '.join(message_split[1:])
         all_messages.append(answer)
