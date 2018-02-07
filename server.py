@@ -2,7 +2,7 @@ import requests
 from handler import handle_message
 
 while True:
-    res = requests.get("https://api.telegram.org/boted8953b0bd55fcc772f52337d3586c54052198feccdf89306b872128a3bcb895/getUpdates")
+    res = requests.get("https://api.telegram.org/bot482414971:AAFJ4-3T9oXmPahj1QPJTRbq2uHH-i7wwtc/getUpdates")
     d = res.json()
 
     for elem in d["result"]:
@@ -11,4 +11,4 @@ while True:
 
         chat_id = elem["message"]["chat"]["id"]
 
-        requests.post("...", params={ "chat_id": chat_id, "text": text })
+        requests.post("https://api.telegram.org/bot482414971:AAFJ4-3T9oXmPahj1QPJTRbq2uHH-i7wwtc/getUpdates", params={ "chat_id": chat_id, "text": ans })
