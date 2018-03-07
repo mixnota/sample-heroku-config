@@ -7,7 +7,7 @@ chat_ids_of_users = set()
 while True:
     res = requests.get("https://api.telegram.org/bot482414971:AAFJ4-3T9oXmPahj1QPJTRbq2uHH-i7wwtc/getUpdates", params={"offset": -1})
     d = res.json()
-    if d["result"][0]["update_id"] > max_update_id:
+    if d["result"] and d["result"][0]["update_id"] > max_update_id:
         max_update_id = max(max_update_id, d["result"][0]["update_id"])
         for elem in d["result"]:
             text = elem["message"]["text"]
